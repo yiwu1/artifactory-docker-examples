@@ -29,6 +29,7 @@ services:
      - postgresql
     volumes:
      - /data/artifactory/node1:/var/opt/jfrog/artifactory
+     - /data/root-certs-pem:/artifactory_extra_certs
     environment:
      - ARTIFACTORY_MASTER_KEY=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
      - HA_IS_PRIMARY=true
@@ -59,6 +60,7 @@ services:
      - artifactory-node1
     volumes:
      - /data/artifactory/node2:/var/opt/jfrog/artifactory
+     - /data/root-certs-pem:/artifactory_extra_certs
     environment:
      - ARTIFACTORY_MASTER_KEY=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
      - HA_IS_PRIMARY=false
